@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <!-- Include the menlo font  -->
+    <link rel="stylesheet" type="text/css" href="style.css"/> 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portrait Prototype</title>
+    <!-- P5 Library -->
+    <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"></script>
+    <script type="text/javascript" src="Library/p5.min.js"></script>
+    <script type="text/javascript" src="Library/p5.dom.min.js"></script>
+    <script type="text/javascript" src="src/main.js"></script>
+  </head>
+  <body>  
+    <div id="container">
+      <div id='captureContainer'>
+      </div>
+      <div id='captureControls'>
+        <button onclick="hide()">Hide</button>
+        <button onclick="show()">Show</button>
+        <button onclick="pause()">Pause</button>
+        <button onclick="start()">Start</button>
+      </div>
+      <div id='canvasContainer'>
+      </div>
+      <div id='canvasControls'>
+        <div class='effectContainer'>
+          <label class='label' for='delay'>Delay Time (between 0 and 5 seconds)</label>
+          <input id='delayTime' name='delay' type="range" min="0" max="5000" value="0" />
+        </div>
+        <div class='pixelEffects'>
+          <p>Video Effects</p>
+          <div class='effectContainer'>
+            <label class='label'>BLUR (between 0 and 5)</label>
+            <input class='radio' type="checkbox" id="blur" value="0">
+            <input id='blurValue' type="range" min="0" max="5" value="0" />
+          </div>
+          <div class='effectContainer'>
+            <label class='label'>THRESHOLD</label>
+            <input class='radio' type="checkbox" id="threshold" value="0">
+          </div>
+          <div class='effectContainer'>
+            <label class='label'>GRAY</label>
+            <input class='radio' type="checkbox" id="gray" value="0">
+          </div>
+          <div class='effectContainer'>
+            <label class='label'>INVERT</label>
+            <input class='radio' type="checkbox" id="invert" value="0">
+          </div>
+          <div class='effectContainer'>
+            <label class='label'>POSTERIZE (between 2 and 10)</label>
+            <input class='radio' type="checkbox" id="posterize" value="0">
+            <input id='postValue' type="range" min="2" max="10" value="2" />
+          </div>
+        </div>
+        <div class='effectContainer'>
+          <label class='label'>DILATE</label>
+          <input class='radio' type="checkbox" id="dilate" value="0">
+        </div>
+        <div class='effectContainer'>
+          <label class='label'>ERODE</label>
+          <input class='radio' type="checkbox" id="erode" value="0">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

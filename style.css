@@ -1,0 +1,39 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-color: black;
+}
+
+#captureControls {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#canvasContainer {
+    margin-top: 20px;
+}
+
+#canvasControls {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.label {
+    color: white;
+    margin-right: 10px;
+}
+
+.effectContainer {
+    display: flex;
+    flex-direction: row; 
+    margin-bottom: 5px;
+}
+
+p {
+    color: white;
+}
+
+.radio {
+    margin-right: 10px;
+}
