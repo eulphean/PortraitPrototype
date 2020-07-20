@@ -1,5 +1,6 @@
 {
-  "name": "twodegreewindow",
+  "name": "portraitprototype",
+  "homepage": "http://amaykataria.com/portraitprototype/",
   "version": "1.0.0",
   "description": "A project to visualize the Ethereum blockchain.",
   "main": "src/main.js",
@@ -19,9 +20,5 @@
   "devDependencies": {
     "browser-sync": "^2.26.10",
     "gulp": "^4.0.2"
-  },
-  "dependencies": {
-    "tingle": "0.0.0",
-    "tingle.js": "^0.15.1"
   }
 }
