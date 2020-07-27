@@ -11,7 +11,11 @@
     <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"></script>
     <script type="text/javascript" src="Library/p5.min.js"></script>
     <script type="text/javascript" src="Library/p5.dom.min.js"></script>
+    <script type="text/javascript" src="Library/p5.sound.js"></script>
+    <script type="text/javascript" src="Library/p5.speech.js"></script>
     <script type="text/javascript" src="src/main.js"></script>
+    <script type="text/javascript" src="src/Speech.js"></script>
+    <script type="text/javascript" src="src/Voice.js"></script>
   </head>
   <body>  
     <div id="container">
@@ -63,6 +67,31 @@
           <label class='label'>ERODE</label>
           <input class='radio' type="checkbox" id="erode" value="0">
         </div>
+      </div>
+      <div id='echoContainer'>
+          <h3>ECHO</h3>
+          <div id='speechContainer'>
+            <div id='speech'>
+              This will update when you start speaking.
+            </div>
+            <div id='speak'>
+              SPEAK
+            </div>
+          </div>
+          <div id='voicesContainer'>
+            <p>COMPUTER VOICES</p>
+            <div class='propContainer'>
+              <label class='label'>Identity</label>
+              <select onchange="onVoiceSelected()"id="voicesSelect">
+
+              </select>
+            </div>
+            <div class='propContainer'>
+              <label class='label'>Language</label>
+              <div id='language'>
+            </div>
+            </div>
+          </div>
       </div>
     </div>
   </body>

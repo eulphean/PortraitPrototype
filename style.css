@@ -1,7 +1,6 @@
 body {
     margin: 0px;
     padding: 0px;
-    overflow: hidden;
     background-color: black;
 }
 
@@ -36,4 +35,43 @@ p {
 
 .radio {
     margin-right: 10px;
+}
+
+#echoContainer {
+    color: white;
+    margin-left: 20px;
+}
+
+#speechContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#speech {
+    width: 250px;
+    word-wrap: break-word;
+}
+
+#speak {
+    margin-left: 20px;
+    padding: 5px;
+    background-color: green;
+}
+
+#voicesContainer {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+#voicesSelect {
+    margin-left: 10px;
+}
+
+.propContainer {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
 }
