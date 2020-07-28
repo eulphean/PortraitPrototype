@@ -88,8 +88,17 @@
             </div>
             <div class='propContainer'>
               <label class='label'>Language</label>
-              <div id='language'>
+              <div id='language'></div>
             </div>
+            <div class="propContainer">
+              <label class='label'>Pitch</label>
+              <input oninput='onPitchChange()' id="pitchSlider" type="range" min="0" max="200" value="100">
+              <div id="pitchVal"></div>
+            </div>
+            <div class="propContainer">
+              <label class='label'>Rate</label>
+              <input oninput='onRateChange()' id="rateSlider" type="range" min="0" max="200" value="70">
+              <div id="rateVal"></div>
             </div>
           </div>
       </div>

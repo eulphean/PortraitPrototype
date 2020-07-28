@@ -103,7 +103,7 @@
         //
 
         that.utterance.onstart = function(e) {
-          //console.log("STARTED");
+          // console.log("STARTED");
           if(that.onStart!=undefined) that.onStart(e);     
         };
         that.utterance.onpause = function(e) {

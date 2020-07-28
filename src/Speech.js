@@ -22,10 +22,11 @@ class Speech {
 
     stop() {
         this.speechRec.rec.stop();
+        this.stopD = true; 
     }
 
     endAudio() {
-        if (this.stopD == true) {
+        if (this.stopD === true) {
             print("Speech: Stopped speech recognition deliberately.");
             this.isRunning = false;
             this.stopD = false;

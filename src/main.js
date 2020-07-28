@@ -20,6 +20,11 @@ let speechSynth;
 let voicesSelect; 
 let language; 
 let voice; 
+let speak; 
+
+// Sliders
+let pitchSlider; let pitchVal; 
+let rateSlider; let rateVal;
 
 function setup() {
   // Where we draw the image. 
@@ -43,11 +48,17 @@ function setup() {
   speech = new Speech(speechResult); 
   speech.start(); 
 
-  voice = new Voice(speechStarted, speechEnded); 
+  voice = new Voice(voiceEnded); 
   voicesSelect = select('#voicesSelect'); 
   language = select('#language');
   speechSynth = window.speechSynthesis; 
   speechSynth.onvoiceschanged = populateVoices; 
+
+  pitchSlider = select('#pitchSlider'); 
+  rateSlider = select('#rateSlider'); 
+  pitchVal = select('#pitchVal'); 
+  rateVal = select('#rateVal'); 
+  speak = select('#speak'); 
 }
 
 function draw() {
@@ -129,9 +140,9 @@ function speechResult(result, isFinal) {
     speechDiv.html(result);
     if (isFinal) {
         console.log(result); 
+        speech.stop(); 
         // Update the color of the SPEAK DIV to red
-        // Because now the computer is speaking 
-        // This is when the computer kicks off with the voice that needs to repeat things. 
+        speak.elt.style.backgroundColor = 'red'; 
         voice.utter(result);
     }
 }
@@ -172,10 +183,27 @@ function onVoiceSelected(event) {
     voice.setNewVoice(v[0]);
 }
 
-function speechStarted() {
 
+function voiceEnded() {
+    console.log('Voice ended');
+    try {
+        if (!speech.isRunning) {
+            speak.elt.style.backgroundColor = 'green';
+            speech.start();
+        }
+      } catch(e) {
+        console.warn("Tried to start speech recognition when it was already started. Ignore it for now.")
+      }
 }
 
-function speechEnded() {
+function onPitchChange() {
+    let v = pitchSlider.value()/100;
+    pitchVal.html(v); 
+    voice.setNewPitch(v); 
+}
 
+function onRateChange() {
+    let v = rateSlider.value()/100; 
+    rateVal.html(v);
+    voice.setNewRate(v); 
 }
